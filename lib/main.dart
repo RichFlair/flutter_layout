@@ -7,6 +7,30 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  Column _buildButtonColumn(Color color, IconData icon, String label) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          icon,
+          color: color,
+        ),
+        const SizedBox(
+          height: 8,
+        ),
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+            color: color,
+          ),
+        )
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget titleSection = Container(
@@ -45,6 +69,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(children: [
           titleSection,
+
         ]),
       ),
     );
